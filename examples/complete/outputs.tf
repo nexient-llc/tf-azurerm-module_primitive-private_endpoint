@@ -11,5 +11,29 @@
 // limitations under the License.
 
 output "private_endpoint_id" {
-  value = ""
+  value = module.private_endpoint.id
+}
+
+output "acr_server_name" {
+  value = module.acr.container_registry_login_server
+}
+
+output "acr_id" {
+  value = module.acr.container_registry_id
+}
+
+output "resource_group_id" {
+  value = module.resource_group.id
+}
+
+output "vnet_id" {
+  value = module.vnet.vnet_id
+}
+
+output "subnet_ids" {
+  value = module.vnet.vnet_subnets
+}
+
+output "vnet_link_id" {
+  value = module.vnet_link.id
 }

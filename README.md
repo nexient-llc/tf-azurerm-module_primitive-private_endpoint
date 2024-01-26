@@ -103,3 +103,53 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | <= 1.5.5 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.77.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.89.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_private_endpoint.private_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_endpoint_name"></a> [endpoint\_name](#input\_endpoint\_name) | Specifies the Name of the Private Endpoint. Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Specifies the Name of the Resource Group within which the Private Endpoint should exist.<br>    Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The supported Azure location where the resource exists. Changing this forces a new resource to be created. | `string` | `"eastus"` | no |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | The ID of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint.<br>    Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_custom_network_interface_name"></a> [custom\_network\_interface\_name](#input\_custom\_network\_interface\_name) | The custom name of the network interface attached to the private endpoint.<br>    Changing this forces a new resource to be created. | `string` | `null` | no |
+| <a name="input_private_dns_zone_group_name"></a> [private\_dns\_zone\_group\_name](#input\_private\_dns\_zone\_group\_name) | Specifies the Name of the Private DNS Zone Group. | `string` | `""` | no |
+| <a name="input_private_dns_zone_ids"></a> [private\_dns\_zone\_ids](#input\_private\_dns\_zone\_ids) | Specifies the list of Private DNS Zones to include | `list(string)` | `[]` | no |
+| <a name="input_private_service_connection_name"></a> [private\_service\_connection\_name](#input\_private\_service\_connection\_name) | n/a | `any` | n/a | yes |
+| <a name="input_is_manual_connection"></a> [is\_manual\_connection](#input\_is\_manual\_connection) | n/a | `any` | n/a | yes |
+| <a name="input_private_connection_resource_id"></a> [private\_connection\_resource\_id](#input\_private\_connection\_resource\_id) | The ID of the Private Link Enabled Remote Resource which this Private Endpoint should be connected to.<br>    One of private\_connection\_resource\_id or private\_connection\_resource\_alias must be specified. | `string` | `null` | no |
+| <a name="input_private_connection_resource_alias"></a> [private\_connection\_resource\_alias](#input\_private\_connection\_resource\_alias) | The Service Alias of the Private Link Enabled Remote Resource which this Private Endpoint should be connected to.<br>    One of private\_connection\_resource\_id or private\_connection\_resource\_alias must be specified. | `string` | `null` | no |
+| <a name="input_subresource_names"></a> [subresource\_names](#input\_subresource\_names) | A list of subresource names which the Private Endpoint is able to connect to. subresource\_names corresponds to group\_id.<br>    Possible values are detailed in the product documentation in the Subresources column.<br>    https://docs.microsoft.com/azure/private-link/private-endpoint-overview#private-link-resource | `list(string)` | `null` | no |
+| <a name="input_request_message"></a> [request\_message](#input\_request\_message) | A message passed to the owner of the remote resource when the private endpoint attempts to establish the connection<br>    to the remote resource. The request message can be a maximum of 140 characters in length.<br>    Only valid if `is_manual_connection=true` | `string` | `""` | no |
+| <a name="input_ip_configuration"></a> [ip\_configuration](#input\_ip\_configuration) | One or more ip\_configuration blocks as defined below. This allows a static IP address to be set for this<br>    Private Endpoint, otherwise an address is dynamically allocated from the Subnet. | <pre>map(object({<br>    name               = string<br>    private_ip_address = string<br>    subresource_name   = optional(string)<br>    member_name        = optional(string)<br>  }))</pre> | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to be attached to this resource | `map(string)` | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | n/a |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

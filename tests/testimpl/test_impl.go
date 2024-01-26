@@ -14,11 +14,8 @@ func TestPrivateEndpointComplete(t *testing.T, ctx types.TestContext) {
 		assert.NotEqual(t, "foo", "bar", "Should never be the same!")
 	})
 
-	// When cloning the skeleton to a new module, you will need to change the below test
-	// to meet your needs and add any new tests that apply to your situation.
 	t.Run("TestPrivateEndpoint", func(t *testing.T) {
 		privateEndpointId := terraform.Output(t, ctx.TerratestTerraformOptions, "private_endpoint_id")
-
 		assert.NotEmpty(t, privateEndpointId, "Private endpoint ID must not be empty")
 	})
 }
