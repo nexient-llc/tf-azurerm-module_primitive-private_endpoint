@@ -5,7 +5,7 @@
 
 ## Overview
 
-This terraform module creates a Private endpoint for a supported Azure resources
+This terraform module creates a Private endpoint for supported Azure resources
 
 ## Pre-Commit hooks
 
