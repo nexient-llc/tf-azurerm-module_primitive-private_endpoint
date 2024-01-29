@@ -17,10 +17,10 @@ No providers.
 |------|--------|---------|
 | <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/nexient-llc/tf-module-resource_name.git | 1.0.0 |
 | <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-resource_group.git | 0.2.0 |
-| <a name="module_vnet"></a> [vnet](#module\_vnet) | git@github.com:nexient-llc/tf-azurerm-module_primitive-virtual_network.git | 0.1.0 |
-| <a name="module_acr"></a> [acr](#module\_acr) | git@github.com:nexient-llc/tf-azurerm-module_primitive-container_registry.git | 0.3.0 |
-| <a name="module_private_dns_zone"></a> [private\_dns\_zone](#module\_private\_dns\_zone) | git@github.com:nexient-llc/tf-azurerm-module_primitive-private_dns_zone.git | 0.1.0 |
-| <a name="module_vnet_link"></a> [vnet\_link](#module\_vnet\_link) | git@github.com:nexient-llc/tf-azurerm-module_primitive-private_dns_vnet_link.git | 0.1.0 |
+| <a name="module_vnet"></a> [vnet](#module\_vnet) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-virtual_network.git | 0.1.0 |
+| <a name="module_acr"></a> [acr](#module\_acr) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-container_registry.git | 0.3.0 |
+| <a name="module_private_dns_zone"></a> [private\_dns\_zone](#module\_private\_dns\_zone) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-private_dns_zone.git | 0.1.0 |
+| <a name="module_vnet_link"></a> [vnet\_link](#module\_vnet\_link) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-private_dns_vnet_link.git | 0.1.0 |
 | <a name="module_private_endpoint"></a> [private\_endpoint](#module\_private\_endpoint) | ../.. | n/a |
 
 ## Resources

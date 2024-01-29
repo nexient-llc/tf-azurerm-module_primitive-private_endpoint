@@ -35,7 +35,7 @@ module "resource_group" {
 }
 
 module "vnet" {
-  source = "git@github.com:nexient-llc/tf-azurerm-module_primitive-virtual_network.git?ref=0.1.0"
+  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-virtual_network.git?ref=0.1.0"
 
   vnet_location                                         = var.region
   resource_group_name                                   = module.resource_group.name
@@ -62,7 +62,7 @@ module "vnet" {
 }
 
 module "acr" {
-  source = "git@github.com:nexient-llc/tf-azurerm-module_primitive-container_registry.git?ref=0.3.0"
+  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-container_registry.git?ref=0.3.0"
 
   container_registry_name       = module.resource_names["acr"].lower_case_without_any_separators
   location                      = var.region
@@ -78,7 +78,7 @@ module "acr" {
 }
 
 module "private_dns_zone" {
-  source = "git@github.com:nexient-llc/tf-azurerm-module_primitive-private_dns_zone.git?ref=0.1.0"
+  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-private_dns_zone.git?ref=0.1.0"
 
   zone_name           = "privatelink.azurecr.io"
   resource_group_name = module.resource_group.name
@@ -89,7 +89,7 @@ module "private_dns_zone" {
 }
 
 module "vnet_link" {
-  source = "git@github.com:nexient-llc/tf-azurerm-module_primitive-private_dns_vnet_link.git?ref=0.1.0"
+  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-private_dns_vnet_link.git?ref=0.1.0"
 
   link_name             = "acr-pe-link"
   private_dns_zone_name = module.private_dns_zone.zone_name
@@ -112,7 +112,7 @@ module "private_endpoint" {
   subresource_names               = ["registry"]
   subnet_id                       = module.vnet.vnet_subnets[0]
   private_dns_zone_ids            = [module.private_dns_zone.id]
-  private_dns_zone_group_name     = "default-test"
+  private_dns_zone_group_name     = "test-group"
 
   tags = var.tags
 
